@@ -12,21 +12,15 @@ class SearchDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Row(children: [
-            IconButton(
-              icon: Icon(Icons.arrow_back),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              color: Colors.black,
-            ),
-            Text(
-              '${data.name}',
-              style:
-                  TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
-            )
-          ]),
-          backgroundColor: Colors.white,
+
+          title: Row(
+            children: [
+              Text(
+                '${data.name}',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ],
+          ),
         ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -35,7 +29,9 @@ class SearchDetailPage extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text('${data.location}'),
+                child: Hero(
+                  tag: data,
+                    child: Text('${data.location}', )),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),

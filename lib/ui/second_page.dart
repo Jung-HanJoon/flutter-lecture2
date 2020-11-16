@@ -41,7 +41,7 @@ class _SecondPageState extends State<SecondPage> {
                 child: Text(
               'Cafe',
               style:
-                  TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
+                  TextStyle(fontWeight: FontWeight.bold),
             )),
             Icon(//+아이콘
               Icons.add,

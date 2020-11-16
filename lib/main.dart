@@ -19,6 +19,8 @@ class MyApp extends StatelessWidget {
       title: '인스타그램 클론코딩 해보기',
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        primaryColor: Colors.white,
+        accentColor: Colors.black,
       ),
       home: NaviUI(),
     );
