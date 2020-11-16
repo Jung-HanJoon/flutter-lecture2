@@ -8,7 +8,6 @@ class SearchDetailPage extends StatelessWidget {
   SearchDetailPage(Conferences data) {
     this.data = data;
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
