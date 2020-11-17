@@ -3,6 +3,7 @@
 /// start : "2020-10-07"
 /// end : "2020-10-08"
 /// location : "🇬🇧 Leeds, UK"
+import 'package:flutter_apps_https/extention_functions/extentions.dart';
 
 class Conferences {
   String _name;
@@ -33,8 +34,8 @@ class Conferences {
   Conferences.fromJson(dynamic json) {
     _name = json["name"];
     _link = json["link"];
-    _start = json["start"];
-    _end = json["end"];
+    _start = json["start"].toString().parseDate();
+    _end = json["end"].toString().parseDate();
     _location = json["location"];
   }
 
