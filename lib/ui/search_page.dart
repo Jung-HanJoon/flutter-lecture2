@@ -4,7 +4,6 @@ import 'package:flutter_apps_https/model/conferences.dart';
 import 'package:flutter_apps_https/ui/search_detail_page.dart';
 import 'package:http/http.dart' as http;
 
-
 class SearchPage extends StatefulWidget {
   @override
   _SearchPageState createState() => _SearchPageState();
@@ -53,7 +52,8 @@ class _SearchPageState extends State<SearchPage> {
               child: ListView(
                 children: conferList
                     .where(
-                      (e) => e.name.toLowerCase().contains(_query.toLowerCase()),
+                      (e) =>
+                          e.name.toLowerCase().contains(_query.toLowerCase()),
                     )
                     .map((e) => ListTile(
                           title: Column(

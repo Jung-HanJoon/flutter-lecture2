@@ -3,7 +3,6 @@ import 'package:flutter_apps_https/model/conferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_apps_https/extention_functions/extentions.dart';
 
-
 class SearchDetailPage extends StatelessWidget {
   Conferences _data;
 

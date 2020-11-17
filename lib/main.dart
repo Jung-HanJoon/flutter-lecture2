@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_apps_https/ui/http_page.dart';
 import 'package:flutter_apps_https/ui/search_page.dart';
+import 'package:flutter_apps_https/ui/todo_list_page.dart';
 import 'package:http/http.dart' as http;
 import 'ui/fisrt_page.dart';
 import 'ui/second_page.dart';
@@ -34,7 +35,7 @@ class NaviUI extends StatefulWidget {
 
 class _NaviUIState extends State<NaviUI> {
   int page_num = 0;
-  final List<Widget> view_page = [FirstPage(), SecondPage(), ThirdPage(), SearchPage()];
+  final List<Widget> view_page = [ToDoListPage(), SecondPage(), ThirdPage(), SearchPage()];
 
   void _onTap(int index) {
     setState(() {
@@ -57,9 +58,7 @@ class _NaviUIState extends State<NaviUI> {
               icon: Icon(Icons.info_outline), title: Text('info')),
           BottomNavigationBarItem(
               icon: Icon(Icons.http), title: Text('info')),
-
         ],
-
         onTap: _onTap,
       ),
     );

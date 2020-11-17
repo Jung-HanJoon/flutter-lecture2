@@ -13,23 +13,23 @@ class Conferences {
   String _location;
 
   String get name => _name;
+
   String get link => _link;
+
   String get start => _start;
+
   String get end => _end;
+
   String get location => _location;
 
-  Conferences({
-      String name, 
-      String link, 
-      String start, 
-      String end, 
-      String location}){
+  Conferences(
+      {String name, String link, String start, String end, String location}) {
     _name = name;
     _link = link;
     _start = start;
     _end = end;
     _location = location;
-}
+  }
 
   Conferences.fromJson(dynamic json) {
     _name = json["name"];
@@ -48,5 +48,4 @@ class Conferences {
     map["location"] = _location;
     return map;
   }
-
 }
