@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_apps_https/ui/http_page.dart';
+import 'package:flutter_apps_https/ui/list_exam_page.dart';
+import 'package:flutter_apps_https/ui/quiz_page.dart';
 import 'package:flutter_apps_https/ui/search_page.dart';
 import 'package:flutter_apps_https/ui/todo_list_page.dart';
 import 'package:http/http.dart' as http;
@@ -35,7 +37,7 @@ class NaviUI extends StatefulWidget {
 
 class _NaviUIState extends State<NaviUI> {
   int page_num = 0;
-  final List<Widget> view_page = [ToDoListPage(), SecondPage(), ThirdPage(), SearchPage()];
+  final List<Widget> view_page = [QuizPage(), SecondPage(), ListExamPage(), SearchPage()];
 
   void _onTap(int index) {
     setState(() {
@@ -46,6 +48,32 @@ class _NaviUIState extends State<NaviUI> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(child: null),
+            ListTile(title: Text('item 1'), onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ThirdPage()),
+                );
+            },),
+            ListTile(title: Text('item 2'), onTap: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ToDoListPage()),
+              );
+            },),
+            ListTile(title: Text('item 3'), onTap: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ListExamPage()),
+              );
+            },),
+          ],
+        ),
+      ),
       body: view_page[page_num],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
